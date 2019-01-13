@@ -1,0 +1,23 @@
+baseurl = "saltandsugar.tech"
+title = "塩と砂糖🍵"
+languageCode = "ja"
+theme = "robust"
+canonifyurls = true
+
+#googleAnalytics = "UA-XXXXXXXX-XX" # Optional
+#disqusShortname = "XYW"
+
+[params]
+  description = "所詮は中学生が書いたブログ"
+  dateformat = "Jan 2, 2006" # Optional
+  # Fonts settings.
+  googlefonts = "https://fonts.googleapis.com/css?family=Lobster|Lato:400,700" # Optional, Include google fonts.
+  fontfamily = "Lato,YuGothic,'Hiragino Kaku Gothic Pro',Meiryo,sans-serif" # Optional, Override body font family.
+  logofontfamily = "Lobster, cursive" # Optional, Override logo font.
+
+[params.author]
+  thumbnail = "images/author.jpg"
+  name = "mira_tech"
+  description = "<p>中学生のプログラマ初心者🔰 </p><p>いろんなことに手を出していくスタイル</p>"
+  twitter = "https://twitter.com/mira_gfx"
+  github = "https://github.com/mira-gfx"
