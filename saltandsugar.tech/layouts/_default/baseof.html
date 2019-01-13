@@ -12,8 +12,10 @@
     <title>{{ block "title" . }}{{ end }}{{ .Site.Title }}</title>
     {{ block "meta" . }}{{ end }}
     <style>
-      {{ replaceRE " +" " " (replaceRE "\n" "" (partial "styles.css" .)) | safeCSS }}
-      {{ replaceRE " +" " " (replaceRE "\n" "" (partial "custom.css" .)) | safeCSS }}
+      {{ $common := resources.Get ( "css/styles.css" | relURL ) | minify }}
+      {{ $custom := resources.Get ( "css/custom.css" | relURL ) | minify }}
+      {{ $bundle := slice $common $custom | resources.Concat "bundle.css" | minify }}
+      {{ $bundle.Content | safeCSS }}
       {{ with .Site.Params.fontfamily }} body { font-family: {{ . | safeCSS }}; } {{ end }}
       {{ with .Site.Params.logofontfamily }} .h-logo { font-family: {{ . | safeCSS }}; } {{ end }}
     </style>
