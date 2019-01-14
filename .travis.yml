@@ -1,3 +1,13 @@
+language: go
+
+before_script:
+  - wget https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_Linux-64bit.deb
+  - sudo dpkg -i hugo_${HUGO_VERSION}_Linux-64bit.deb
+
+# ビルドを実行
+script:
+  - hugo -D
+
 deploy:
   provider: s3
   access_key_id: AKIAJ6SNC5JHKYFIWB2A
@@ -9,3 +19,4 @@ deploy:
   acl: ''
   on:
     repo: mira-gfx/Hugo-blog
+
