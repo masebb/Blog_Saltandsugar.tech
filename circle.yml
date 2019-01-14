@@ -34,6 +34,10 @@ jobs:
       - restore_cache:
           keys:
             - blog
+       - run:
+          name: init-serverless-config
+          command: sls config credentials -k ${AKIAJ7JFVDWTFNW36IBQ} -s ${TCrKZE8lgS/HECLNX8m1Nyidsea2c0Bc1GZGmKev} -p aws
+          
       - run:
           name: deploy hugo 
           command: aws s3 sync public s3://saltandsugar.tech.s3.amazonaws.com/
