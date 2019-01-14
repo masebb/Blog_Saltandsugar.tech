@@ -1,66 +1,44 @@
 version: 2
 jobs:
-  build:
-    working_directory: ~/saltandsugar.tech
-    machine: true
-    steps:
-      - checkout
-      - run:
-          name: dawnload hugo
-          command: wget https://github.com/gohugoio/hugo/releases/download/v0.37.1/hugo_0.37.1_Linux-64bit.deb
-      - run:
-          name: install hugo
-          command: sudo dpkg -i hugo_0.37.1_Linux-64bit.deb
-      - run:
-          name: install pygments
-          command: pip install pygments
-      - run:
-          name: run hugo
-          command: hugo -D
-      - save_cache:
-          key: blog-{{ epoch }}
-          paths:
-            - ~//blog
+build:
+working_directory: ~/saltandsugar.tech
+machine:
+image: circleci/classic:201708-01
+steps:
+- checkout
+- run:
+name: dawnload hugo
+command: wget https://github.com/gohugoio/hugo/releases/download/v0.37.1/hugo_0.37.1_Linux-64bit.deb
+- run:
+name: install hugo
+command: sudo dpkg -i hugo_0.37.1_Linux-64bit.deb
+- run:
+name: build hugo
+command: hugo
+- save_cache:
+key: site-{{ epoch }}
+paths:
+- ~/saltandsugar.tech/public
 
-  approve:
-    working_directory: ~/saltandsugar.tech
-    machine: true
-    steps:
-      - run:
-          name: noope
-          command: echo noope
-
-  deploy:
-    working_directory: ~/saltandsugar.tech/public
-    machine: true
-    steps:
-      - restore_cache:
-          keys:
-            - blog
-            
-      - run:
-          name: init-serverless-config
-          command: sls config credentials -k ${AKIAJ7JFVDWTFNW36IBQ} -s ${TCrKZE8lgS/HECLNX8m1Nyidsea2c0Bc1GZGmKev} -p aws
-          
-      - run:
-          name: deploy hugo 
-          command: aws s3 sync public s3://saltandsugar.tech.s3.amazonaws.com/
+deploy:
+working_directory: ~/saltandsugar.tech
+machine: true
+steps:
+- restore_cache:
+keys:
+- site
+- run:
+name: deploy hugo
+command: aws s3 sync public s3://saltandsugar.tech.s3.amazonaws.com/
 
 workflows:
-  version: 2
-  build_and_deploy:
-    jobs:
-      - build
-      - approve:
-          type: approval
-          requires:
-            - build
-          filters:
-            branches:
-              only: master
-      - deploy:
-          requires:
-            - approve
-          filters:
-            branches:
-              only: master
+version: 2
+build_and_deploy:
+jobs:
+- build
+- deploy:
+requires:
+- build
+filters:
+branches:
+only: master
