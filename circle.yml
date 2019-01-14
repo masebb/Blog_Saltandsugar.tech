@@ -1,7 +1,7 @@
 version: 2
 jobs:
   build:
-    working_directory: ~/blog.stormcat.io
+    working_directory: ~/saltandsugar.tech
     machine: true
     steps:
       - checkout
@@ -17,7 +17,7 @@ jobs:
       - save_cache:
           key: blog-{{ epoch }}
           paths:
-            - ~/blog.stormcat.io/blog
+            - ~//blog
 
   approve:
     working_directory: ~/saltandsugar.tech
@@ -36,7 +36,7 @@ jobs:
             - blog
       - run:
           name: deploy hugo 
-          command: aws s3 sync s3://saltandsugar.tech/
+          command: aws s3 sync public s3://saltandsugar.tech.s3.amazonaws.com/
 
 workflows:
   version: 2
