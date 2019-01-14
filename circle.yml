@@ -20,7 +20,7 @@ jobs:
             - ~/blog.stormcat.io/blog
 
   approve:
-    working_directory: ~/blog.stormcat.io
+    working_directory: ~/saltandsugar.tech
     machine: true
     steps:
       - run:
@@ -28,7 +28,7 @@ jobs:
           command: echo noope
 
   deploy:
-    working_directory: ~/blog.stormcat.io/blog
+    working_directory: ~/saltandsugar.tech/public
     machine: true
     steps:
       - restore_cache:
