@@ -7,7 +7,7 @@ jobs:
       - checkout
       - run:
           name: install hugo
-          command: go get https://github.com/gohugoio/hugo
+          command: go get github.com/gohugoio/hugo
       - run:
           name: install pygments
           command: pip install pygments
