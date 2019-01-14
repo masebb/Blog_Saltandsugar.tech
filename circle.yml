@@ -34,6 +34,9 @@ jobs:
       - restore_cache:
           keys:
             - blog
+      - run:
+          name: run hugo
+          command: hugo -D
             
       - run:
           name: init-serverless-config
