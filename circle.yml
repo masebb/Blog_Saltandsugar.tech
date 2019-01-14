@@ -14,6 +14,9 @@ jobs:
       - run:
           name: install pygments
           command: pip install pygments
+      - run:
+          name: run hugo
+          command: hugo -D
       - save_cache:
           key: blog-{{ epoch }}
           paths:
@@ -34,9 +37,6 @@ jobs:
       - restore_cache:
           keys:
             - blog
-      - run:
-          name: run hugo
-          command: hugo -D
             
       - run:
           name: init-serverless-config
