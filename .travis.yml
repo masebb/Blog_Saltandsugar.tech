@@ -1,5 +1,13 @@
 language: go
+dist: trusty
 
+# これでdockerコンテナとして立ち上がるので起動が速い
+sudo: false
+
+# このセクションを挟まないと勝手にgo getを走らせようとしてこける
+install: true
+
+# .debパッケージをダウンロードしてインストール
 before_script:
   - wget https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_Linux-64bit.deb
   - sudo dpkg -i hugo_${HUGO_VERSION}_Linux-64bit.deb
