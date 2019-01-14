@@ -1,59 +1,42 @@
 version: 2
-jobs:
-  build:
-    working_directory: ~/saltandsugar.tech
-    machine: true
-    steps:
-      - checkout
-      - run:
-          name: install hugo
-          command: go get github.com/gohugoio/hugo
-      - run:
-          name: install pygments
-          command: pip install pygments
-      - run:
-          name: build hugo
-          pwd: blog/
-          command: hugo -t casper
-      - save_cache:
-          key: blog-{{ epoch }}
-          paths:
-            - ~/saltandsugar.tech
+general:
+  build_dir:
+    /
+  branches:
+    only:
+      - master
+      - deploy_ci
 
-  approve:
-    working_directory: ~/saltandsugar.tech
-    machine: true
-    steps:
-      - run:
-          name: noope
-          command: echo noope
+checkout:
+  post:
+    - wget https://github.com/gohugoio/hugo/releases/download/v0.37.1/hugo_0.37.1_Linux-64bit.deb
+    - sudo dpkg -i hugo_0.37.1_Linux-64bit.deb
 
-  deploy:
-    working_directory: ~/saltandsugar.tech/public
-    machine: true
-    steps:
-      - restore_cache:
-          keys:
-            - blog
-      - run:
-          name: deploy hugo 
-          command: aws s3 sync public s3://saltandsugar.tech/
+machine:
+  timezone:
+    Asia/Tokyo
 
-workflows:
-  version: 2
-  build_and_deploy:
-    jobs:
-      - build
-      - approve:
-          type: approval
-          requires:
-            - build
-          filters:
-            branches:
-              only: master
-      - deploy:
-          requires:
-            - approve
-          filters:
-            branches:
-              only: master
+dependencies:
+  pre:
+    - sudo pip install awscli
+  post:
+    - touch application-`date +"%Y-%m%d-%I-%M-%S"` && mv application-* $CIRCLE_ARTIFACTS
+    - hugo
+    - cd public
+
+test:
+  override:
+    - echo "skip test"
+
+deployment:
+  production: # just a label; label names are completely up to you
+    branch: master
+    commands:
+      - ls
+      - aws s3 sync ./public s3://saltandsugar.tech/ --delete
+
+  staging:
+    branch: deploy_ci
+    commands:
+      - ls
+      - aws s3 sync ./public s3://saltandsugar.tech/ --delete
