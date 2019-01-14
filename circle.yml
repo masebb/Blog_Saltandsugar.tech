@@ -34,7 +34,8 @@ jobs:
       - restore_cache:
           keys:
             - blog
-       - run:
+            
+      - run:
           name: init-serverless-config
           command: sls config credentials -k ${AKIAJ7JFVDWTFNW36IBQ} -s ${TCrKZE8lgS/HECLNX8m1Nyidsea2c0Bc1GZGmKev} -p aws
           
