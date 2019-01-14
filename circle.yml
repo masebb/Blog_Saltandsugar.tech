@@ -36,7 +36,7 @@ jobs:
             - blog
       - run:
           name: deploy hugo 
-          command: aws s3 sync public s3://saltandsugar.tech/
+          command: aws s3 sync s3://saltandsugar.tech/
 
 workflows:
   version: 2
