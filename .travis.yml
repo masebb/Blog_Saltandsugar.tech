@@ -9,8 +9,8 @@ install: true
 
 # .debパッケージをダウンロードしてインストール
 before_script:
-  - wget https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_Linux-64bit.deb
-  - sudo dpkg -i hugo_${HUGO_VERSION}_Linux-64bit.deb
+  - wget https://github.com/gohugoio/hugo/releases/download/hugo_0.53_Linux-64bit.deb/hugo_0.53_Linux-64bit.deb
+  - sudo dpkg -i hugo_0.53_Linux-64bit.deb
 
 # ビルドを実行
 script:
