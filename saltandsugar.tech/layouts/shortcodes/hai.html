@@ -1,0 +1,19 @@
+<head>
+<style type="text/css">
+.hai {
+  border-radius: 10px 30px 30px 30px;
+  padding: 10px;
+  background: #043456;
+}
+.moji{
+    font-size: 20px;
+    font-weight: normal;
+    color: white;
+}
+</style>
+</head>
+<figure{{ if .Get "class" }} class="{{ .Get "class" }}"{{ end }}>
+<div class="hai">
+        <p class="moji">{{.Inner}}</p>
+</div>
+</figure> 

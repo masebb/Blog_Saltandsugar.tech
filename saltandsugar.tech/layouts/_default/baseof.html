@@ -12,10 +12,39 @@
     <title>{{ block "title" . }}{{ end }}{{ .Site.Title }}</title>
     {{ block "meta" . }}{{ end }}
     <style>
-      {{ $common := resources.Get ( "css/styles.css" | relURL ) | minify }}
-      {{ $custom := resources.Get ( "css/custom.css" | relURL ) | minify }}
-      {{ $bundle := slice $common $custom | resources.Concat "bundle.css" | minify }}
-      {{ $bundle.Content | safeCSS }}
+        .cp_link {
+	display: inline-block;
+	perspective: 1000px;
+	perspective-origin: 50% 50%;
+	vertical-align: bottom;
+	overflow: hidden;
+}
+.cp_link span {
+	display: inline-block;
+	position: relative;
+	padding: 0.1em 0.3em;
+	transition: .4s;
+	transform-origin: 50% 0%;
+	transform-style: preserve-3d;
+}
+.cp_link span:after {
+	display: inline-block;
+	position: absolute;
+	padding: 0.1em 0.3em;
+	left: 0;
+	top: 0;
+	content: attr(data-text);
+	color: #fff;
+	background-color: #00ACC1;
+	transform-origin: 50% 0%;
+	transform: translate3d(0, 105%, 0) rotateX(-90deg);
+}
+.cp_link:hover span {
+	background-color: #00ACC1;
+	transform: translate3d(0, 0, -30px) rotateX(90deg);
+}
+      {{ replaceRE " +" " " (replaceRE "\n" "" (partial "styles.css" .)) | safeCSS }}
+      {{ replaceRE " +" " " (replaceRE "\n" "" (partial "custom.css" .)) | safeCSS }}
       {{ with .Site.Params.fontfamily }} body { font-family: {{ . | safeCSS }}; } {{ end }}
       {{ with .Site.Params.logofontfamily }} .h-logo { font-family: {{ . | safeCSS }}; } {{ end }}
     </style>
@@ -29,7 +58,10 @@
     <header class="l-header">
       <div class="l-container">
         <div class="logo">
-          <a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
+          <a class="cp_link" href="{{ .Site.BaseURL }}">
+            <span data-text="{{ .Site.Title }}">{{ .Site.Title }}</span>
+            
+            </a>
         </div>
         {{ partial "description.html" . }}
       </div>
@@ -48,6 +80,7 @@
           <p>Powered by <a href="https://gohugo.io/">Hugo</a>.</p>
           <p><a href="https://github.com/dim0627/hugo_theme_robust">Robust</a> designed by <a href="http://yet.unresolved.xyz/">Daisuke Tsuji</a>.</p>
         </aside>
+        <p><a href="{{ .Site.BaseURL }}privacy/">プライバシーポリシー</a></p>
       </div>
     </footer>
 
