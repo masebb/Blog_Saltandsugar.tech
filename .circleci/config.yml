@@ -20,9 +20,7 @@ jobs:
       - run:
           name: hugo install
           command: |
-              go get -v github.com/spf13/hugo
-              git config --global user.name "ryoma-tokushige"
-              git config --global user.email "ryoma.tokushige@gmail.com"
+              go get -v https://github.com/gohugoio/hugo
 
       - run:
           name: push to master
