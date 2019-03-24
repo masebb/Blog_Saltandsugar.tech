@@ -4,7 +4,7 @@ theme = "robust"
 languageCode = "ja-JP"
 hasCJKLanguage = true
 
-googleAnalytics = "UA-132387896-1" # Optional
+googleAnalytics = " UA-134607774-1" # Optional
 disqusShortname = "saltandsugar-tech-1"
 
 [params]
@@ -17,7 +17,7 @@ disqusShortname = "saltandsugar-tech-1"
 [params.author]
   thumbnail = "images/author.jpg"
   name = "mira_tech"
-  description = "<p>中学生。いろんなことして遊んでる。このブログとこの人については<a href='/about'>こちら</a>。</p>"
+  description = "<p>中学生。いろんなことして遊んでる。このブログとこの人については<a href='/about/what'>こちら</a>。</p>"
   twitter = "https://twitter.com/mira_gfx"
   github = "https://github.com/mira-gfx"
   

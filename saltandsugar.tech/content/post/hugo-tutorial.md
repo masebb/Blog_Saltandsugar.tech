@@ -5,6 +5,8 @@ thumbnail = "images/Hugo-Tutorial-Thumbnail.png"
 toc = true 
 categories = [ "hugo" ]
 tags = [ "hugo", "PC", "ブログ"]
+series = ["Hugo-Tutorial"]
+description = "Hugoでブログを建てる方法シリーズ"
 +++
 
 ## HugoとAWSでブログを構築するチュートリアル
@@ -43,7 +45,7 @@ Hugoにはサーバが要りません(Htmlを吐き出す)なので環境がシ�
 
 ### 悪い所
 **・GUIで操作出来ない**
-操作は全てCUI(文字のやつ)です。
+操作は全てCUIです。
 
 WordPressとかだとWeb上で操作出来たりますがHugoだと全てCUIでの操作になります
 {{% img src="images/screen-themes.png" w="500" h="300" caption="WordPressを操作する人の図." %}}
@@ -85,8 +87,31 @@ Amazon Web Services（アマゾン ウェブ サービス、AWS）とは、Amazo
 
 として使っていきます。
 
+## 補足
+Html= 正式名称は**HyperText Markup Language** Webサイトを構築する為に出来た(プログラミング)言語
+
+静的= HTMLファイルがベース。ブログの更新などは全てローカル(PC内)に作ったものからHTMLファイルが吐き出される。
+
+動的= ファイルの種類はサイトによって様々。Htmlファイルがベースのタイプが多い(のか？)ブログの更新などは全てサーバ上で行う。
+
+CUI= 正式名称は**Character User Interface** 文字のやつ
+{{% img src="images/hugo-Tutorial-cui.png" w="450" h="300" caption="Hugoを操作する人の図." %}}
+
+GUI= 正式名称は**Graphical User Interface**MacとはWindows(語彙力)
+
+
+## まとめ
+環境をシンプルにしたい。ロマンを求める方はぜひHugo沼へ
+
+
 シリーズとしてちょくちょく更新するので、ぜひ！
 
 お　わ　り
 
+#### 参考にしたもの
+https://gohugo.io -The world’s fastest framework for building websites
+http://tamura.goga.co.jp/article/429818193.html-
+静的サイトジェネレータの生成時間比較
+https://www.sejuku.net/blog/10281　-
+AWSとは？Amazon Web Servicesの概要を基礎からわかりやすく解説
 
