@@ -1,19 +1,18 @@
-version: 0.2
-
+      version: 0.2
 env:
-  parameter-store:
-    key1: "CloudFrontDistributionID"
+  variables:
+    LC_CTYPE: "C.UTF-8"
 phases:
-  install:
-    commands:
-      - curl -Lshttps://github-production-release-asset-2e65be.s3.amazonaws.com/11180687/20035e00-260e-11e9-957e-644244dd1a1f?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20190324%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190324T045124Z&X-Amz-Expires=300&X-Amz-Signature=226b3f694d918d7a3d19f6c7dab09e434d049e9a8d06a8596d42c2ea2851b7c5&X-Amz-SignedHeaders=host&actor_id=30523995&response-content-disposition=attachment%3B%20filename%3Dhugo_0.54.0_Linux-ARM64.tar.gz&response-content-type=application%2Foctet-stream -o /tmp/hugo.tar.gz
-      - tar xf /tmp/hugo.tar.gz -C /tmp
-      - mv /tmp/hugo /usr/bin/hugo
-      - rm -rf /tmp/hugo*
-  build:
-    commands:
-      - hugo     
-  post_build:
-    commands:
-      - aws s3 sync --exact-timestamps --delete public/ s3://saltandsugar.tech
-      - aws cloudfront create-invalidation --distribution-id $key1 --paths "/*"
+    install:
+        commands:
+            - pip install awscli --upgrade --user
+            - wget https://github-production-release-asset-2e65be.s3.amazonaws.com/11180687/209bf480-260e-11e9-9abd-f800c1ee24ef?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20190324%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190324T044953Z&X-Amz-Expires=300&X-Amz-Signature=7f36b8a921c170ff59906e3ad215926020cd2a8ea15d87b863bbbe29c6159314&X-Amz-SignedHeaders=host&actor_id=30523995&response-content-disposition=attachment%3B%20filename%3Dhugo_0.54.0_Linux-ARM64.deb&response-content-type=application%2Foctet-stream
+            - dpkg -i hugo_${hugo_version}_Linux-64bit.deb
+    build:
+        commands:
+            - hugo
+    post_build:
+       commands:
+            - echo "S3 Upload Beginning"
+            - aws s3 sync --delete ./public s3://saltandsugar.tech
+            - echo "S3 Upload Complete"
