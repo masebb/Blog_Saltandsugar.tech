@@ -1,4 +1,4 @@
-version: 0.1
+version: 0.2
 
 env:
   parameter-store:
@@ -6,7 +6,7 @@ env:
 phases:
   install:
     commands:
-      - curl -Ls https://github.com/gohugoio/hugo/releases/download/v0.46/hugo_0.46_Linux-64bit.tar.gz -o /tmp/hugo.tar.gz
+      - curl -Lshttps://github-production-release-asset-2e65be.s3.amazonaws.com/11180687/20035e00-260e-11e9-957e-644244dd1a1f?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20190324%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190324T045124Z&X-Amz-Expires=300&X-Amz-Signature=226b3f694d918d7a3d19f6c7dab09e434d049e9a8d06a8596d42c2ea2851b7c5&X-Amz-SignedHeaders=host&actor_id=30523995&response-content-disposition=attachment%3B%20filename%3Dhugo_0.54.0_Linux-ARM64.tar.gz&response-content-type=application%2Foctet-stream -o /tmp/hugo.tar.gz
       - tar xf /tmp/hugo.tar.gz -C /tmp
       - mv /tmp/hugo /usr/bin/hugo
       - rm -rf /tmp/hugo*
