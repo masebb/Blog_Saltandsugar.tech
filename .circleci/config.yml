@@ -3,13 +3,10 @@ version: 2
 jobs:
 build:
 working_directory: ~/project
-docker:
-	- image: circleci/golang:1.9
+ docker:
+      - image: cibuilds/hugo:latest
 steps:
 	- checkout
-	- run:
-	name: install hugo
-	command: go get -v github.com/gohugoio/hugo
 	- run:
 	name: build hugo
 	command: hugo
