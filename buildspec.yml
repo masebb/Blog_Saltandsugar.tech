@@ -1,0 +1,19 @@
+version: 0.1
+
+env:
+  parameter-store:
+    key1: "CloudFrontDistributionID"
+phases:
+  install:
+    commands:
+      - curl -Ls https://github.com/gohugoio/hugo/releases/download/v0.46/hugo_0.46_Linux-64bit.tar.gz -o /tmp/hugo.tar.gz
+      - tar xf /tmp/hugo.tar.gz -C /tmp
+      - mv /tmp/hugo /usr/bin/hugo
+      - rm -rf /tmp/hugo*
+  build:
+    commands:
+      - hugo     
+  post_build:
+    commands:
+      - aws s3 sync --exact-timestamps --delete public/ s3://saltandsugar.tech
+      - aws cloudfront create-invalidation --distribution-id $key1 --paths "/*"
