@@ -1,7 +1,7 @@
 +++
 date = "2019-03-13T17:00:00+09:00"
 title = "Hugoの基礎工事！"
-thumbnail = "images/Hugo-Tutorial-Thumbnail.png"
+thumbnail = "images/Hugo-Tutorial-Thumbnail.jpg"
 toc = true 
 categories = [ "hugo" ]
 tags = [ "hugo", "PC", "ブログ"]
@@ -63,6 +63,7 @@ hugo version
 {{% img src="images/hugo-version.png" caption="こうなるはず" %}}
 こんな感じの出力が出たらOK!
 
+{{% adsense %}}
 ## Windows
 **WindowsでのHugoのインストールについては筆者がWindowsマシンを所有していないので、動作が保証できません()誰か検証して()**
 
@@ -129,7 +130,7 @@ go install --tags extended
 
 Hugoのインストール完了！！！
 
-
+{{% adsense %}}
 ## ブログを動かす！
 全OS共通のはず。
 

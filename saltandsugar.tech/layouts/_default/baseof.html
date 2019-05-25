@@ -2,6 +2,16 @@
 <html>
   <head>
     {{ partial "meta.html" . }}
+      <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-132387896-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-132387896-1');
+</script>
+
     {{ with .Site.Params.googlefonts }}
     <link href="{{ . }}" rel="stylesheet">
     {{ else }}
@@ -69,11 +79,20 @@
     </header>
 
     <main>
+    <DIV align="center"> 
+      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- home -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:728px;height:90px"
+     data-ad-client="ca-pub-3443926296700450"
+     data-ad-slot="1051788998"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></DIV>
       <div class="l-container">
         {{ block "main" . }}{{ end }}
       </div>
     </main>
-
     <footer class="l-footer">
       <div class="l-container">
         <p>{{ with .Site.Copyright }}{{ . | safeHTML }}{{ else }}<span class="h-logo">&copy; {{ .Site.Title }}</span>{{ end }}</p>

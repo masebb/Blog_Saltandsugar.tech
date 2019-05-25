@@ -4,7 +4,6 @@ theme = "robust"
 languageCode = "ja-JP"
 hasCJKLanguage = true
 
-googleAnalytics = " UA-134607774-1" # Optional
 disqusShortname = "saltandsugar-tech-1"
 
 [params]
