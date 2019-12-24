@@ -2,14 +2,17 @@
 draft = true
 thumbnail = "images/eclipse-modulesystem-classpath-what/thumbnail.png"
 toc = true
-tags = ["eclipse", "Java"]
+tags = ["Eclipse", "Java"]
 categories = ["Java"]
 date = "2019-05-11T22:03:11+09:00"
 title = "eclipseのモジュールパスとクラスパスってなんだコレ。案の定エラー"
 description = "Eclipseでjarを突っ込もうとしたら事件は起きた。今まではなかったモジュールパスとクラスパスの表示が！？？！！？？なんだこれ状態。一体何なんだよこれを解説する所。それがここ。"
 +++
+## 追記[2019-09-21]
+[こちら](https://www.gwtcenter.com/eclipse-modulepath-and-classpath)の企業ブログ記事の方がよっぽどわかりやすいです。
+https://www.gwtcenter.com/eclipse-modulepath-and-classpath を見る事をお勧めします。
 
-# eclipseのモジュールパスとクラスパスってなんなん
+## eclipseのモジュールパスとクラスパスってなんなん
 
 {{% img src="images/eclipse-modulesystem-classpath-what/namaemendoi.png" caption="な　ん　だ　こ　れ" %}}
 
