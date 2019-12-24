@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on 塩と砂糖🍵</title>
+    <link>https://www.saltandsugar.tech/post/</link>
+    <description>Recent content in Posts on 塩と砂糖🍵</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-JP</language>
+    <lastBuildDate>Sat, 21 Sep 2019 12:40:49 +0900</lastBuildDate>
+    
+	<atom:link href="https://www.saltandsugar.tech/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>VSCodeのロゴに商標権、著作権あるの？</title>
+      <link>https://www.saltandsugar.tech/post/vscode-tm/</link>
+      <pubDate>Sat, 21 Sep 2019 12:40:49 +0900</pubDate>
+      
+      <guid>https://www.saltandsugar.tech/post/vscode-tm/</guid>
+      <description>サムネが適当 僕は気になります。 とある物(有償で配布予定)でVSCode(VisualStudioCode)のロゴとかを利用しようかな、と思っ</description>
+    </item>
+    
+    <item>
+      <title>JavaでHTMLバースしてみる。(Jsoupの使い方)</title>
+      <link>https://www.saltandsugar.tech/post/jsoup/</link>
+      <pubDate>Sun, 26 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.saltandsugar.tech/post/jsoup/</guid>
+      <description>ご挨拶 こんにちは。@mira_techです。 なんか最近Htmlバースしたい欲があるのでhtmlバースします。そう、Jsoupで。 石油王っぽい</description>
+    </item>
+    
+    <item>
+      <title>eclipseのモジュールパスとクラスパスってなんだコレ。案の定エラー</title>
+      <link>https://www.saltandsugar.tech/post/eclipse-modulesystem-classpath-what/</link>
+      <pubDate>Sat, 11 May 2019 22:03:11 +0900</pubDate>
+      
+      <guid>https://www.saltandsugar.tech/post/eclipse-modulesystem-classpath-what/</guid>
+      <description>追記[2019-09-21] こちらの企業ブログ記事の方がよっぽどわかりやすいです。 https://www.gwtcenter.com/eclipse-modulepath-and-classpath を見る事をお勧めします。 eclipseのモジュールパスと</description>
+    </item>
+    
+    <item>
+      <title>AdSense受かったので設置しました！</title>
+      <link>https://www.saltandsugar.tech/post/adsense-pass-examination/</link>
+      <pubDate>Mon, 25 Mar 2019 14:24:25 +0900</pubDate>
+      
+      <guid>https://www.saltandsugar.tech/post/adsense-pass-examination/</guid>
+      <description>お知らせ この度当サイトがAdsenseの審査に受かりましたありがとうございます。 やったぜ！ ちょっとお話 ちゃんと自分のサイトを自分で見ましょう</description>
+    </item>
+    
+    <item>
+      <title>S3の機能、ライフサイクルルールの使い方</title>
+      <link>https://www.saltandsugar.tech/post/aws-s3-lifecycle/</link>
+      <pubDate>Thu, 21 Mar 2019 12:34:59 +0900</pubDate>
+      
+      <guid>https://www.saltandsugar.tech/post/aws-s3-lifecycle/</guid>
+      <description>大量に発生する通信ログにうんざりですか？ S3の機能の一つライフサイクルルールを使いましょう！！ なんでしょうか？ ライフサイクルとは ライフサイク</description>
+    </item>
+    
+    <item>
+      <title>[必見](日本で)逮捕、検挙される方法！</title>
+      <link>https://www.saltandsugar.tech/post/taihotokenkyo/</link>
+      <pubDate>Tue, 19 Mar 2019 17:00:00 +0900</pubDate>
+      
+      <guid>https://www.saltandsugar.tech/post/taihotokenkyo/</guid>
+      <description>最初に。 ※この記事はかなり挑発的です。 まぁココにたどり着いた人はだいたい知っているだろうけど一応説明。 ブラクラのURLを、インターネットの掲</description>
+    </item>
+    
+  </channel>
+</rss>

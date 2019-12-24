@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Jsoup on 塩と砂糖🍵</title>
+    <link>https://www.saltandsugar.tech/tags/jsoup/</link>
+    <description>Recent content in Jsoup on 塩と砂糖🍵</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-JP</language>
+    <lastBuildDate>Sun, 26 May 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://www.saltandsugar.tech/tags/jsoup/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>JavaでHTMLバースしてみる。(Jsoupの使い方)</title>
+      <link>https://www.saltandsugar.tech/post/jsoup/</link>
+      <pubDate>Sun, 26 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.saltandsugar.tech/post/jsoup/</guid>
+      <description>ご挨拶 こんにちは。@mira_techです。 なんか最近Htmlバースしたい欲があるのでhtmlバースします。そう、Jsoupで。 石油王っぽい</description>
+    </item>
+    
+  </channel>
+</rss>

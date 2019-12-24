@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Aws on 塩と砂糖🍵</title>
+    <link>https://www.saltandsugar.tech/tags/aws/</link>
+    <description>Recent content in Aws on 塩と砂糖🍵</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-JP</language>
+    <lastBuildDate>Thu, 21 Mar 2019 12:34:59 +0900</lastBuildDate>
+    
+	<atom:link href="https://www.saltandsugar.tech/tags/aws/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>S3の機能、ライフサイクルルールの使い方</title>
+      <link>https://www.saltandsugar.tech/post/aws-s3-lifecycle/</link>
+      <pubDate>Thu, 21 Mar 2019 12:34:59 +0900</pubDate>
+      
+      <guid>https://www.saltandsugar.tech/post/aws-s3-lifecycle/</guid>
+      <description>大量に発生する通信ログにうんざりですか？ S3の機能の一つライフサイクルルールを使いましょう！！ なんでしょうか？ ライフサイクルとは ライフサイク</description>
+    </item>
+    
+  </channel>
+</rss>
