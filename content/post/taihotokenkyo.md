@@ -7,7 +7,7 @@ tags = ["PC", "JavaScript", "どうでも良いお話"]
 description = "lets-get-arrested(みんなで逮捕されようプロジェクト)に参加して犯罪者になる方法！"
 +++
 ## 最初に。
-※この記事はかなり挑発的です。
+※半分冗談半分本当かもしれない
 
 まぁココにたどり着いた人はだいたい知っているだろうけど一応説明。
 
@@ -16,9 +16,7 @@ description = "lets-get-arrested(みんなで逮捕されようプロジェク�
 >
 > ー [TOKYO MX](https://news.nifty.com/article/item/neta/12266-218209/)
 
-要約すると、検挙される様な内容のURLを[5ch](5ch.net)に貼った(作った？)ので兵庫県警が検挙したと。
-
-まじでかわいそう😭....
+要約すると、検挙される様な内容のURLを[5ch](5ch.net)に貼った(作った？)ので兵庫県警が検挙しました
 
 不正プログラムの内容としてはAlert無限ループってヤツですね
 ```
@@ -51,7 +49,7 @@ Githubアカウントを持っていない方はまず作ってください。�
 
 [ここ](https://github.com/hamukazu/lets-get-arrested)にアクセス！！！そしておもむろにforkボタンをクリック！！！
 
-{{% img src="images/lets-get-arrested-github.png" caption="これな" %}}
+{{< img src="images/lets-get-arrested-github.png" caption="これな" >}}
 
 あとは```[自分のユーザ名].github.io/lets-get-arrested/```をSNSや自分のブログで拡散しましょう！！！！！
 (因みに自分のページは[これ](https://mira-gfx.github.io/lets-get-arrested/))
@@ -62,7 +60,3 @@ Githubアカウントを持っていない方はまず作ってください。�
 >警察に自首することができます。
 >
 >ー [hamukazu](https://github.com/hamukazu/lets-get-arrested/blob/master/README.ja.md)
-
-## P.S.
-最近のサイバーテロ課かなりマズイですよね。coinhive事件で学んだんじゃないでしょうか？？
-

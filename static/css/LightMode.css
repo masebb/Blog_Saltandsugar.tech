@@ -1,0 +1,54 @@
+.light-blue{
+    background-color: var(--Light-Blue);
+}
+.light-green{
+    background-color: var(--Light-Green);
+}
+.light-indigo{
+    background-color: var(--Light-Indigo);
+}
+.light-orange{
+    background-color: var(--Light-Orange);
+}
+.light-pink{
+    background-color: var(--Light-Pink);
+}
+.light-purple{
+    background-color: var(--Light-Purple);
+}
+.light-red{
+    background-color: var(--Light-Red);
+}
+.light-teal{
+    background-color: var(--Light-Teal);
+}
+/* .light-yellow{
+  background-color: var(--Light-Yellow);
+} 見にきぃ*/
+html {
+    background-color: var(--Light-Gray-5);
+}
+body {
+    color: var(--Dark-Gray-5);
+}
+article.lism {
+    background-color: var(--Light-Gray-3);
+}
+.l-header {
+    background-color: var(--Light-Gray-4);
+}
+.l-footer {
+    background-color: var(--Light-Gray-3);
+}
+.author {
+    background-color: var(--Light-Gray-3);
+}
+article.lism > a {
+    color: var(--Dark-Gray-5);
+}
+.logo a {
+    color: var(--Dark-Gray-5);
+}
+a {
+    color: #c3ff36;
+}

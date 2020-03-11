@@ -1,98 +1,56 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="utf-8">
+    <title>{{ block "title" . }}{{ end }}{{ .Site.Title }}</title>
     {{ partial "meta.html" . }}
-      <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-132387896-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    {{ block "meta" . }}{{ end }}
 
-  gtag('config', 'UA-132387896-1');
-</script>
-
+    <link rel="canonical" href="{{ .Permalink }}">
     {{ with .Site.Params.googlefonts }}
     <link href="{{ . }}" rel="stylesheet">
     {{ else }}
-    <link href="//fonts.googleapis.com/css?family=Roboto+Slab:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700" rel="stylesheet">
     {{ end }}
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css">
-    <title>{{ block "title" . }}{{ end }}{{ .Site.Title }}</title>
-    {{ block "meta" . }}{{ end }}
-    <meta name="Description" content="中学生な@mira_techの個人技術ブログです。いろんなことして頑張ってます。">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-color/2.1.2/jquery.color.js"></script>
+    <!--    -->
+    <link rel="stylesheet" href="" id="JSChange">
+    <script src="/js/color.js"></script>
+    <script>CSSload()</script>
+<!--    -->
     <style>
-        .cp_link {
-	display: inline-block;
-	perspective: 1000px;
-	perspective-origin: 50% 50%;
-	vertical-align: bottom;
-	overflow: hidden;
-}
-.cp_link span {
-	display: inline-block;
-	position: relative;
-	padding: 0.1em 0.3em;
-	transition: .4s;
-	transform-origin: 50% 0%;
-	transform-style: preserve-3d;
-}
-.cp_link span:after {
-	display: inline-block;
-	position: absolute;
-	padding: 0.1em 0.3em;
-	left: 0;
-	top: 0;
-	content: attr(data-text);
-	color: #fff;
-	background-color: #00ACC1;
-	transform-origin: 50% 0%;
-	transform: translate3d(0, 105%, 0) rotateX(-90deg);
-}
-.cp_link:hover span {
-	background-color: #00ACC1;
-	transform: translate3d(0, 0, -30px) rotateX(90deg);
-}
-      {{ replaceRE " +" " " (replaceRE "\n" "" (partial "styles.css" .)) | safeCSS }}
-      {{ replaceRE " +" " " (replaceRE "\n" "" (partial "custom.css" .)) | safeCSS }}
-      {{ with .Site.Params.fontfamily }} body { font-family: {{ . | safeCSS }}; } {{ end }}
-      {{ with .Site.Params.logofontfamily }} .h-logo { font-family: {{ . | safeCSS }}; } {{ end }}
+{{ partial "styles.css" . | safeCSS }}
+{{ partial "custom.css" . | safeCSS }}
+{{ with .Site.Params.fontfamily }} body { font-family: {{ . | safeCSS }}; } {{ end }}
+{{ with .Site.Params.logofontfamily }} .h-logo { font-family: {{ . | safeCSS }}; } {{ end }}
     </style>
+{{ if and .Site.GoogleAnalytics (ne (getenv "HUGO_ENV") "DEV") }}
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', {{ .Site.GoogleAnalytics }}, 'auto', {'useAmpClientId': true});
+ga('send', 'pageview');
+</script>
+{{ end }}
   </head>
-
   <body>
-    {{ if ne (getenv "HUGO_ENV") "DEV" }}
-    {{ template "_internal/google_analytics.html" . }}
-    {{ end }}
-
     <header class="l-header">
       <div class="l-container">
         <div class="logo">
-          <a class="cp_link" href="{{ .Site.BaseURL }}">
-            <span data-text="{{ .Site.Title }}">{{ .Site.Title }}</span>
-            
-            </a>
+          <a href="{{ .Site.BaseURL }}" data-text="{{ .Site.Title }}">{{ .Site.Title }}</a>
         </div>
         {{ partial "description.html" . }}
       </div>
     </header>
-
     <main>
-    <DIV align="center"> 
-      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- home -->
-<ins class="adsbygoogle"
-     style="display:inline-block;width:728px;height:90px"
-     data-ad-client="ca-pub-3443926296700450"
-     data-ad-slot="1051788998"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script></DIV>
       <div class="l-container">
         {{ block "main" . }}{{ end }}
       </div>
     </main>
+
     <footer class="l-footer">
       <div class="l-container">
         <p>{{ with .Site.Copyright }}{{ . | safeHTML }}{{ else }}<span class="h-logo">&copy; {{ .Site.Title }}</span>{{ end }}</p>
@@ -100,13 +58,14 @@
           <p>Powered by <a href="https://gohugo.io/">Hugo</a>.</p>
           <p><a href="https://github.com/dim0627/hugo_theme_robust">Robust</a> designed by <a href="http://yet.unresolved.xyz/">Daisuke Tsuji</a>.</p>
         </aside>
-        <p><a href="{{ .Site.BaseURL }}privacy/">プライバシーポリシー</a></p>
-        <p><a href="https://docs.google.com/forms/d/1wsFIZQwkApxFgwjlTIMdEPl0ZMyCDEtyfRYjvxp0UKM/edit?usp=forms_home&ths=true">お問い合わせ&指摘など</a></p>
       </div>
     </footer>
 
-    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js" integrity="sha256-aYTdUrn6Ow1DDgh5JTc3aDGnnju48y/1c8s1dgkYPQ8=" crossorigin="anonymous"></script>
     <script>hljs.initHighlightingOnLoad();</script>
+    <script>buttonSetting()</script>
+    {{ if .IsHome }} <script>Onload()</script>{{ end }}
+    {{ if not .IsHome }} <script>OnloadPage()</script>{{ end }}
   </body>
 </html>
 

@@ -5,22 +5,23 @@ toc = true
 tags = ["Eclipse", "Java"]
 categories = ["Java"]
 date = "2019-05-11T22:03:11+09:00"
+lastmod = "2020-01-06T12:40:49+09:00"
 title = "eclipseのモジュールパスとクラスパスってなんだコレ。案の定エラー"
 description = "Eclipseでjarを突っ込もうとしたら事件は起きた。今まではなかったモジュールパスとクラスパスの表示が！？？！！？？なんだこれ状態。一体何なんだよこれを解説する所。それがここ。"
 +++
 ## 追記[2019-09-21]
-[こちら](https://www.gwtcenter.com/eclipse-modulepath-and-classpath)の企業ブログ記事の方がよっぽどわかりやすいです。
+[**こちら**](https://www.gwtcenter.com/eclipse-modulepath-and-classpath)**の企業ブログ記事の方がよっぽどわかりやすいです。**
 https://www.gwtcenter.com/eclipse-modulepath-and-classpath を見る事をお勧めします。
 
 ## eclipseのモジュールパスとクラスパスってなんなん
 
-{{% img src="images/eclipse-modulesystem-classpath-what/namaemendoi.png" caption="な　ん　だ　こ　れ" %}}
+{{< img src="images/eclipse-modulesystem-classpath-what/namaemendoi.png" caption="な　ん　だ　こ　れ" >}}
 
 なんだこれ。
 で案の定モジュールパスに突っ込んだらエラー出た。
 [@mira_tech](twitter.com/mira_gfx)です。
 
-MacクリーンインストールしてEclipse再インストールする時に今まで[Oxygen使ってたのをEclipse 2019-03に変えたんです。]([Eclipse 日本語化 | MergeDoc Project]http://mergedoc.osdn.jp/)そして[Jsoup](https://jsoup.org)を使おうとしたその時事件は起きました。
+MacクリーンインストールしてEclipse再インストールする時に今まで[Oxygen使ってたのをEclipse 2019-03に変えたんです。](http://mergedoc.osdn.jp/)そして[Jsoup](https://jsoup.org)を使おうとしたその時事件は起きました。
 
 **なんか増えてる🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔**
 
@@ -31,16 +32,9 @@ MacクリーンインストールしてEclipse再インストールする時に�
 **クラスバスに入れれば動く。**
 以上です。
 
-<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">悲報:五月病で現場猫も仕事を放棄 <a href="https://t.co/9tvWvm0SFA">pic.twitter.com/9tvWvm0SFA</a></p>&mdash; はち (@9NZ7hagej) <a href="https://twitter.com/9NZ7hagej/status/1125611961524187142?ref_src=twsrc%5Etfw">May 7, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
-
-ヨシ！！！！！！！！
-
 ## なにこれ！？！？！？！？！？？！
-### Module System…?(未確定)
-{{% img src="images/eclipse-modulesystem-classpath-what/google.png" caption="うーん？" %}}
-
-(モジュールシステム？？　**モジュールパスはどこ行った？？？**　よくわからん。モジュールシステムでいいのか？　教えてください)
-
+### Module System…?(ウソ内容)
+{{< img src="images/eclipse-modulesystem-classpath-what/google.png" caption="うーん？" >}}
 ~~Java SE 9 からの機能っぽい。(なんだかんだJava SE 9触るの初めて。)~~
 
 ~~なんかよくわからんけど~~
@@ -48,7 +42,7 @@ MacクリーンインストールしてEclipse再インストールする時に�
 
 ~~・あるjarファイルがまたとあるjarファイルを参照(import)していて、もしjarファイルが足りなくてもエラーが出ずそのまま通っちゃって(以下略)~~
 
-~~Javaのポリシー的には**コンパイルする時にチェックされるべき**らしいので、これはJava(Oracle?)が『イケテナイ』と思って追加された機能がこれ。~~
+~~Javaのポリシー的には**コンパイルする時にチェックされるべき**らしいので、これはJava(Oracle?)が『イケテナイ』と思って追加された機能がこれらしい~~
 
 嘘っぽいからとりあえず取り消し線 
 
@@ -70,10 +64,6 @@ MacクリーンインストールしてEclipse再インストールする時に�
 
 
 ## THE END
-僕もよくわからないけど
-ﾁｮｯﾄﾃﾞｷﾙ。
-
 
 モジュールシステムってどうなんだ？モジュールパス？？と何か関係でも？
-全然ググっても出てこん()
-🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔 
+全然ググっても出てこん🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔 

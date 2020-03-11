@@ -10,13 +10,11 @@ description = "JavaでHTMLバース欲があるのでバースしてコケる。
 +++
 # ご挨拶
 こんにちは。[@mira_tech](https://twitter.com/mira_tech)です。
-なんか最近Htmlバースしたい欲があるのでhtmlバースします。そう、Jsoupで。
-
-<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">石油王っぽい人にフォローされた <a href="https://t.co/JX0iTcUdqZ">pic.twitter.com/JX0iTcUdqZ</a></p>&mdash; 🛰🍣🍣🍣mira_sushi🍣🍣🍣🛰 (@mira_tech) <a href="https://twitter.com/mira_tech/status/1132084523200466944?ref_src=twsrc%5Etfw">May 25, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
+なんか最近HTMLバースしたいのでhtmlバースします。そう、**Jsoup**で。
 
 ## チュートリアル！
 
-{{% img src="images/jsoup/Eclipse-project-create.png" %}}
+{{< img src="images/jsoup/Eclipse-project-create.png" >}}
 プロジェクト作成！！！
 
 <blockquote class="twitter-tweet"><p lang="ja" dir="ltr">さっき気付いたんだけどめちゃくちゃ便利これ。<br>最高すぎる <a href="https://t.co/HDd7HJdrzq">pic.twitter.com/HDd7HJdrzq</a></p>&mdash; 🛰🍣🍣🍣mira_sushi🍣🍣🍣🛰 (@mira_tech) <a href="https://twitter.com/mira_tech/status/1132084783641530368?ref_src=twsrc%5Etfw">May 25, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
@@ -25,15 +23,15 @@ description = "JavaでHTMLバース欲があるのでバースしてコケる。
 
 そしてライブラリーとなる[Jsoupをダウンロード](https://jsoup.org/download)
 
-{{% img src="images/jsoup/jsoup-download.png" %}}
+{{< img src="images/jsoup/jsoup-download.png" >}}
 
 で、プロジェクトを右クリックしてプロパティをクリック。
 
-{{% img src="images/jsoup/Eclipse-Property.png" %}}
+{{< img src="images/jsoup/Eclipse-Property.png" >}}
 
 んで、”Javaのビルド・パス”を選択⇨”ライブラリ”を選択(選択済みの場合は次)⇨”クラスパス”をクリック⇨”外部JARの追加”でダウンロードしたやつを選択。それで”適用して閉じる”すれば適用されます。
 
-{{% img src="images/jsoup/Eclipse-JavaBuildpath.png" %}}
+{{< img src="images/jsoup/Eclipse-JavaBuildpath.png" >}}
 
 そしたらメインクラスに下のコードをコピペして見てください。
 ```java
@@ -69,9 +67,9 @@ public class Main {
 
 そして実行すると、
 
-{{% img src="images/jsoup/gizmode-html.png" %}}
+{{< img src="images/jsoup/gizmode-html.png" >}}
 
-こんな感じで[Gizmodo](https://gizmodo.jp)の生のHTMLが出てきます。やったぜ！
+こんな感じで[Gizmodo](https://gizmodo.jp)の生のHTMLが出てきます。
 
 {{% adsense %}}
 ## タグとかクラスとか指定する。
@@ -80,26 +78,26 @@ public class Main {
 ### Firefox:
 そのページで左クリック！
 
-{{% img src="images/jsoup/Firefox-Devtool.png" %}}
+{{< img src="images/jsoup/Firefox-Devtool.png" >}}
 
 要素を調査をクリック。
 そして、左上にあるこれをクリック。
 
-{{% img src="images/jsoup/Firefox-Devtool-2.png" %}}
+{{< img src="images/jsoup/Firefox-Devtool-2.png" >}}
 
 そして、求めている情報の上にマウスを動かします。
 
-{{% img src="images/jsoup/Firefox-Devtool-3.png" %}}
+{{< img src="images/jsoup/Firefox-Devtool-3.png" >}}
 
 こうなります。で、クリックするとそれが選択されます。
 
-{{% img src="images/jsoup/Firefox-Devtool-4.png" %}}
+{{< img src="images/jsoup/Firefox-Devtool-4.png" >}}
 
-**Chromeもだいたいこんな感じだから頑張って()**
+この記事タイトルに属しているクラス名は```p-cardHead-cardTitle```です
 
-これですね。まずタグを丸ごとごと取得します。
+まずタグを丸ごとごと取得するところまで
 
-H2にあるクラス ```p-cardHead-cardTitle```を取得したいのでクラスを指定して出すようなコード出します。
+h2にあるクラス ```p-cardHead-cardTitle```を取得したいのでクラスを指定して出すようなコード出します。
 ```java
 package jsoup.mira_tech;
 
@@ -138,11 +136,11 @@ public class Main {
 
 1つだけ取得したいのに2つも出てきました
 
-{{% img src="images/jsoup/cmp.png" %}}
+{{< img src="images/jsoup/cmp.png" >}}
 
 これは困った。本来ならばこれで終わるはずやったのに。
 
-残念ながらclass名``` .p-cardHead-cardTitle```のHTMLタグが2つあって被ってるみたいです。
+残念ながらclass名``` .p-cardHead-cardTitle```のHTMLタグのついた要素が2つあって衝突してるみたいです。
 と言う訳で頑張る。
 
 ## 頑張る！！！！！！
@@ -179,7 +177,6 @@ public class Main {
 			//System.out.println(document.html());
 		} catch (IOException e) {
 			// TODO 自動生成された catch ブロック
-			//エラーです。残念。
 			System.err.println("エラーーーーーーーーーー");
 			e.printStackTrace();
 		}
@@ -197,5 +194,5 @@ public class Main {
 
 とか書いてたら空白入って早速死にました
 
-{{% img src="images/jsoup/Die.png" caption="な ぜ な の か" %}}
+{{< img src="images/jsoup/Die.png" caption="な ぜ な の か" >}}
 

@@ -1,28 +1,23 @@
 baseurl = "https://www.saltandsugar.tech/"
 title = "塩と砂糖🍵"
-theme = "robust"
+theme = "hugo_theme_robust"
 languageCode = "ja-JP"
 hasCJKLanguage = true
-
-disqusShortname = "saltandsugar-tech-1"
+copyright = "Copyright &copy; 2020-2019, mira_tech."
+disqusShortname = "saltandsugar"
 
 [params]
   description = "所詮は中学生が書いたブログ "
   dateformat = "Jan 2, 2006" # Optional
-  # Fonts settings.
-  googlefonts = "https://fonts.googleapis.com/css?family=Lobster|Lato:400,700" # Optional, Include google fonts.
-  logofontfamily = "Lobster, cursive" # Optional, Override logo font.
+  googlefonts = "https://fonts.googleapis.com/css?family=Lobster|Lato:400,700"
+  logofontfamily = "Lobster, cursive"
 
 [params.author]
   thumbnail = "images/author.jpg"
   name = "mira_tech"
-  description = "<p>中学生。いろんなことして遊んでる。このブログとこの人については<a href='/about/what'>こちら</a>。</p>"
-  twitter = "https://twitter.com/mira_gfx"
-  github = "https://github.com/mira-gfx"
-  
-  [taxonomies]
-    tag = "tags"
-    category = "categories"
-    series = "series"
-    
+  description = "<p>中学生。普通の中学生よりいろんなことして遊んでる。このブログとこの人については<a href='/about/what'>こちら</a>。</p>"
+  twitter = "https://twitter.com/mira_tech"
+  github = "https://github.com/mira-tech"
+[taxonomies]
+
     
