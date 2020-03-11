@@ -1,5 +1,4 @@
 function CSSload() {
-    console.log($("JSChange").length==null);
     if(localStorage.getItem("DarkMode")==="true"){
         if($("article.li").length != 0){
             //ホーム
@@ -51,14 +50,11 @@ function randomcolor() {
 }
 //本処理
 function Onload(){
-    console.log("発火！！！！！")
     if(localStorage.getItem("DarkMode") === null){
         //初アクセス
         localStorage.setItem("DarkMode", "true");
-        console.log("初期化しました");
         Onload();
     }else{//再アクセス
-        console.log(localStorage.getItem("DarkMode"));
         if (localStorage.getItem("DarkMode") === "true"){
             //ダークモード(true)
             if($("article.li").length != 0){
@@ -71,7 +67,6 @@ function Onload(){
                 //記事
                 CSSload();
             }
-            console.log("ダークモード適応");
         } else if (localStorage.getItem("DarkMode") === "false") {
             //ダークモード(true)
             if ($("article.li").length != 0) {
@@ -84,7 +79,6 @@ function Onload(){
                 //記事
                 CSSload();
             }
-            console.log("ライトモード適応");
         }else{
             console.log(localStorage.getItem("DarkMode"));
             //おめー変な値入れあがったな...
@@ -102,7 +96,7 @@ function modeChange() {
         Onload();
         if($("article.sn").length!=0){
             //記事
-            const tmp = $("article.sn").attr("class").split("-")[1]
+            const tmp = $("article.sn").attr("class").split("-")[1];
             $("article.sn").removeClass("dark-"+tmp);
             $("article.sn").addClass("light-"+tmp);
         }
@@ -119,10 +113,8 @@ function modeChange() {
     }
 }
 function OnloadPage() {
-    console.log(sessionStorage.getItem("Home-to-Page"))
     if(sessionStorage.getItem("Home-to-Page")==null){
         //検索エンジンなどから
-        console.log("貴様さては検索エンジンから来たな...")
         Onload();
         if (localStorage.getItem("DarkMode") === "true") {
             $("article.sn").addClass("dark-" + randomcolor());
@@ -144,7 +136,6 @@ function buttonSetting(){
             }
         },
         "mouseenter": function (e) {
-            console.log('のったよ！');
                 if (localStorage.getItem("DarkMode") === "true") {
                     $(".description").css("color", "var(--Dark-Gray-5)");
                     $(".logo a").css("color", "var(--Dark-Gray-5)");
@@ -160,7 +151,6 @@ function buttonSetting(){
                 }
         },
         "mouseleave": function (e) {
-            console.log('はなれたよ！');
             $(this).stop();
             $(this).css("background-color", "");
             $(".description").css("color","");
@@ -169,6 +159,5 @@ function buttonSetting(){
     });
     $("article.li>a").on("click", function () {
         sessionStorage.setItem("Home-to-Page", $(this).parent().attr("class").split(" ")[1]);
-        console.log("ローカルストレージに" + $(this).parent().attr("class").split(" ")[1] + "を保存しました(Key:Home-to-Page)");
     });
 }
