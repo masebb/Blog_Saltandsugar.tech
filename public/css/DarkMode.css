@@ -1,0 +1,57 @@
+.dark-blue{
+    background-color: var(--Dark-Blue);
+}
+.dark-green{
+    background-color: var(--Dark-Green);
+}
+.dark-indigo{
+    background-color: var(--Dark-Indigo);
+}
+.dark-orange{
+    background-color: var(--Dark-Orange);
+}
+.dark-pink{
+    background-color: var(--Dark-Pink);
+}
+.dark-purple{
+    background-color: var(--Dark-Purple);
+}
+.dark-red{
+    background-color: var(--Dark-Red);
+}
+.dark-teal{
+    background-color: var(--Dark-Teal);
+}
+/* .dark-yellow{
+  background-color: var(--Dark-Yellow);
+} 見にきぃ*/
+html {
+    background-color: var(--Dark-Gray-5);
+}
+body {
+    color: var(--Light-Gray-5);
+}
+article.lism {
+    background-color: var(--Dark-Gray-3);
+}
+.l-header {
+    background-color: var(--Dark-Gray-4);
+}
+.l-footer {
+    background-color: var(--Dark-Gray-3);
+}
+.author {
+    background-color: var(--Dark-Gray-3);
+}
+article.lism > a {
+    color: var(--Light-Gray-5);
+}
+.logo a {
+    color: var(--Light-Gray-5);
+}
+a {
+    color: #c3ff36;
+}
+/*TODO
+   - 記事のCSS追加
+   */

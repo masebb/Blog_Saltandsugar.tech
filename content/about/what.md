@@ -47,5 +47,5 @@ AWSのCloudFlont, S3, Route53使ってます。CMSが静的なhtmlとかcssを�
 けど.techのドメインが安いので我慢....
 
 全部お名前.com
-{{% img src="images/what-meiwaku.png" caption="ﾀﾋね"%}}
+{{< img src="images/what-meiwaku.png" caption="ﾀﾋね">}}
 (解除出来るらしいけどやり方がよくわからんしめんどくさ)
