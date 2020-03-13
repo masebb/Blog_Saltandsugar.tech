@@ -1,6 +1,6 @@
 +++
 draft = true
-thumbnail = "images/CloudFlont+Route53でwww.付きでも無しでもアクセスできるようにする/thumbnail.png"
+thumbnail = "images/CloudFlont+Route53.../thumbnail.png"
 tags = ["CloudFront","aws"]
 date = "2020-03-13T21:05:36+09:00"
 lastmod = "2020-03-13T21:05:36+09:00"
@@ -12,7 +12,7 @@ description = ""
 
 ## 端的に
 **二つ作っちゃえばいいんだよ！**
-{{< img src="images/CloudFlont+Route53でwww.付きでも無しでもアクセスできるようにする/CloudFront-Management-screen.png" >}}
+{{< img src="images/CloudFlont+Route53.../CloudFront-Management-screen.png" >}}
 
 www.なしとwww.あり両方のディストリビューション作っちゃえばええんだよ(もちろん設定内容は同じにして)
 ### 注意
