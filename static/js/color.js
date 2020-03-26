@@ -1,23 +1,12 @@
-function CSSload() {
-    if(localStorage.getItem("DarkMode")==="true"){
-        if($("article.li").length != 0){
-            //ホーム
-            $("#JSChange").attr("href","css/DarkMode.css");
-        }else{
-            //記事
-            $("#JSChange").attr("href","../../css/DarkMode.css");
-        }
-    }else if(localStorage.getItem("DarkMode")==="false"){
-        if($("article.li").length != 0){
-            //ホーム
-            $("#JSChange").attr("href","css/LightMode.css");
-        }else{
-            //記事
-            $("#JSChange").attr("href","../../css/LightMode.css");
-        }
+$(function(){
+    $(window).on('load',function(){
+        $("#pageloading-wrap").fadeOut();
+    });
+    function loaderClose(){
+        $("#pageloading-wrap").fadeOut();
     }
-}
-
+    setTimeout(loaderClose,10000);
+});
 function randomcolor() {
     switch (Math.floor(Math.random() * 8)) {
         case 0:
@@ -48,16 +37,31 @@ function randomcolor() {
             break;
     }
 }
+function CSSload() {
+    if(localStorage.getItem("DarkMode")==="true"){
+        $("#JSChange").attr("href","/css/DarkMode.css");
+    }else if(localStorage.getItem("DarkMode")==="false"){
+        $("#JSChange").attr("href","/css/LightMode.css");
+    }
+}
 //本処理
 function Onload(){
     if(localStorage.getItem("DarkMode") === null){
         //初アクセス
-        localStorage.setItem("DarkMode", "true");
-        Onload();
+        if(window.matchMedia('(prefers-color-scheme: dark)').matches===true){
+            localStorage.setItem("DarkMode", "true");
+            Onload();
+        }else if(window.matchMedia('(prefers-color-scheme: dark)').matches===false){
+            localStorage.setItem("DarkMode", "false");
+            Onload();
+        }else{
+            localStorage.setItem("DarkMode", "true");
+            Onload();
+        }
     }else{//再アクセス
         if (localStorage.getItem("DarkMode") === "true"){
             //ダークモード(true)
-            if($("article.li").length != 0){
+            if($("article.li").length !== 0){
                 //ホーム
                 CSSload();
                 $("article.li").each(function () {
@@ -69,7 +73,7 @@ function Onload(){
             }
         } else if (localStorage.getItem("DarkMode") === "false") {
             //ダークモード(true)
-            if ($("article.li").length != 0) {
+            if ($("article.li").length !== 0) {
                 //ホーム
                 CSSload();
                 $("article.li").each(function () {
@@ -82,7 +86,7 @@ function Onload(){
         }else{
             console.log(localStorage.getItem("DarkMode"));
             //おめー変な値入れあがったな...
-            console.log("おめー変な値入れあがったな...ぜってー許さない...")
+            console.log("おめー変な値入れあがったな...ぜってー許さない...");
             localStorage.setItem("DarkMode", "true");
             Onload();
         }
@@ -94,7 +98,7 @@ function modeChange() {
         //ダークモード→ライトモード
         localStorage.setItem("DarkMode","false");
         Onload();
-        if($("article.sn").length!=0){
+        if($("article.sn").length!==0){
             //記事
             const tmp = $("article.sn").attr("class").split("-")[1];
             $("article.sn").removeClass("dark-"+tmp);
@@ -104,9 +108,9 @@ function modeChange() {
         //ライトモード→ダークモード
         localStorage.setItem("DarkMode", "true");
         Onload();
-        if($("article.sn").length!=0){
+        if($("article.sn").length!==0){
             //記事
-            const tmp = $("article.sn").attr("class").split("-")[1]
+            const tmp = $("article.sn").attr("class").split("-")[1];
             $("article.sn").removeClass("light-"+tmp);
             $("article.sn").addClass("dark-"+tmp);
         }
@@ -124,7 +128,6 @@ function OnloadPage() {
     }else{
         //index.htmlから
         Onload();
-        //TODO 横見込時に動かん
         $("article.sn").addClass(sessionStorage.getItem("Home-to-Page"));
     }
 }

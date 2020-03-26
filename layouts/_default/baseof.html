@@ -19,8 +19,6 @@
     <!--    -->
     <link rel="stylesheet" href="" id="JSChange">
     <script src="/js/color.min.js"></script>
-    <script>CSSload()</script>
-<!--    -->
     <style>
 {{ partial "styles.css" . | safeCSS }}
 {{ partial "custom.css" . | safeCSS }}
@@ -37,6 +35,9 @@ ga('send', 'pageview');
 {{ end }}
   </head>
   <body>
+  <div id="pageloading-wrap">
+
+  </div>
     <header class="l-header">
       <div class="l-container">
         <div class="logo">
