@@ -25,7 +25,7 @@ jobs:
         hugo-version: '0.62.2'
         extended: true
     - name: Build
-      run: hugo --minify
+      run: hugo -D --minify
     - name: Deploy
       env: 
         S3_UPLOAD_BUCKET: ${{ secrets.S3_UPLOAD_BUCKET }}
