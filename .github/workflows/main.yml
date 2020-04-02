@@ -30,4 +30,6 @@ jobs:
       env: 
         S3_UPLOAD_BUCKET: ${{ secrets.S3_UPLOAD_BUCKET }}
       run:
-        aws s3 cp ./public s3://$S3_UPLOAD_BUCKET/ --quiet
+         aws s3 sync --exact-timestamps --delete public/ s3://${{ secrets.S3_UPLOAD_BUCKET }}
+         aws cloudfront create-invalidation --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID_1 }} --paths "/*"
+         aws cloudfront create-invalidation --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID_2 }} --paths "/*"
