@@ -116,6 +116,7 @@ function modeChange() {
         }
     }
 }
+//TODO OnloadPage()とOnload()を統合したい(別れてる意味ないから)
 function OnloadPage() {
     if(sessionStorage.getItem("Home-to-Page")==null){
         //検索エンジンなどから
