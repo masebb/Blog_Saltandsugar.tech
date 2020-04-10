@@ -424,7 +424,7 @@ article.sn > .article-body strong {
   box-shadow: 0 -.5rem 0 0 rgba(252, 255, 51, 0.51) inset;
 }
 
-article.sn > .article-body em {
+article.sn > .article-body em a:visited{
   color: #8bc34a;
 }
 
@@ -719,9 +719,6 @@ section.footer > header a {
   list-style-type: disc;
   font-weight: 500;
 }
-  .toc nav > ul a{
-    color: #2196f3!important;
-   }
 
 .author {
   /*background-color: var(--Dark-Gray-3);*/
