@@ -6,5 +6,5 @@ date = "{{ .Date }}"
 lastmod = "{{ .Date }}"
 title = ""
 description = ""
-toc =
+toc = false
 +++
