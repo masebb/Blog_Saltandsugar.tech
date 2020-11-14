@@ -52,3 +52,7 @@ article.lism > a {
 a {
     color: #c3ff36;
 }
+.toc a {
+    color: var(--Dark-Gray-2);
+    text-decoration-line: none;
+}
