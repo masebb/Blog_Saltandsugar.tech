@@ -5,6 +5,7 @@ toc = true
 tags = ["Eclipse", "Java", "Jsoup"]
 categories = ["Java"]
 date = "2019-05-26"
+lastmod = "2020-11-27"
 title = "JavaでHTMLバースしてみる。(Jsoupの使い方)"
 description = "JavaでHTMLバース欲があるのでバースしてコケる。"
 +++
@@ -13,25 +14,22 @@ description = "JavaでHTMLバース欲があるのでバースしてコケる。
 なんか最近HTMLバースしたいのでhtmlバースします。そう、**Jsoup**で。
 
 ## チュートリアル！
+依存関係を追加
+### Maven
+```xml
+<!-- https://mvnrepository.com/artifact/org.jsoup/jsoup -->
+<dependency>
+    <groupId>org.jsoup</groupId>
+    <artifactId>jsoup</artifactId>
+    <version>1.12.1</version>
+</dependency>
+```
+### Gradle
+```
+// jsoup HTML parser library @ https://jsoup.org/
+compile 'org.jsoup:jsoup:1.12.1'
+```
 
-{{< img src="images/jsoup/Eclipse-project-create.png" >}}
-プロジェクト作成！！！
-
-<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">さっき気付いたんだけどめちゃくちゃ便利これ。<br>最高すぎる <a href="https://t.co/HDd7HJdrzq">pic.twitter.com/HDd7HJdrzq</a></p>&mdash; 🛰🍣🍣🍣mira_sushi🍣🍣🍣🛰 (@mira_tech) <a href="https://twitter.com/mira_tech/status/1132084783641530368?ref_src=twsrc%5Etfw">May 25, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
-
-便利。マジで。
-
-そしてライブラリーとなる[Jsoupをダウンロード](https://jsoup.org/download)
-
-{{< img src="images/jsoup/jsoup-download.png" >}}
-
-で、プロジェクトを右クリックしてプロパティをクリック。
-
-{{< img src="images/jsoup/Eclipse-Property.png" >}}
-
-んで、”Javaのビルド・パス”を選択⇨”ライブラリ”を選択(選択済みの場合は次)⇨”クラスパス”をクリック⇨”外部JARの追加”でダウンロードしたやつを選択。それで”適用して閉じる”すれば適用されます。
-
-{{< img src="images/jsoup/Eclipse-JavaBuildpath.png" >}}
 
 そしたらメインクラスに下のコードをコピペして見てください。
 ```java
@@ -46,7 +44,6 @@ import org.jsoup.nodes.Document;
 public class Main {
 
 	public static void main(String[] args) {
-		// *TODO* 自動生成されたメソッド・スタブ
 		Document document;
 		try {
 			//接続！！
@@ -54,8 +51,6 @@ public class Main {
 			//出力！！！！
 			System.out.println(document.html());
 		} catch (IOException e) {
-			// *TODO* 自動生成された catch ブロック
-			//エラーです。残念。
 			System.err.println(“エラーーーーーーーーーー”);
 			e.printStackTrace();
 		}
@@ -140,7 +135,7 @@ public class Main {
 
 これは困った。本来ならばこれで終わるはずやったのに。
 
-残念ながらclass名``` .p-cardHead-cardTitle```のHTMLタグのついた要素が2つあって衝突してるみたいです。
+残念ながらclass名``` .p-cardHead-cardTitle```のHTMLタグのついた要素が2つあって衝突(?)してるみたいです。
 と言う訳で頑張る。
 
 ## 頑張る！！！！！！
@@ -186,13 +181,11 @@ public class Main {
 
 ```
 
-詳しくはコード見て。
+(コード解説はしません)
 
 ちなみにGizmodoの最初に出てくる一番でかい上にあるやつ(見出し記事？)のタイトルを出してます。ちなみに一つ目の記事のタイトルに空白が入ると空白基準にしてるので『別の記事だ！！！』と勘違いされて終わります。
 
-<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">くそグラフシリーズ、これが一番すき <a href="https://t.co/9WgOzrHMRW">pic.twitter.com/9WgOzrHMRW</a></p>&mdash; じゃがりきん (@jagarikin) <a href="https://twitter.com/jagarikin/status/1131943542329266176?ref_src=twsrc%5Etfw">May 24, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
-
-とか書いてたら空白入って早速死にました
+とか書いてたらタイトルに空白入って早速死にました
 
 {{< img src="images/jsoup/Die.png" caption="な ぜ な の か" >}}
 

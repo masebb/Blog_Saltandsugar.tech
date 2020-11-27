@@ -3,7 +3,7 @@ draft = true
 thumbnail = "images/VSCode-TM/thumbnail.png"
 tags = ["PC", "VSCode", "商標権"]
 date = "2019-09-21T12:40:49+09:00"
-lastmod = "2019-09-21T12:40:49+09:00"
+lastmod = "2020-11-27T12:40:49+09:00"
 title = "VSCodeのロゴに商標権、著作権あるの？"
 description = "僕はそういうの気にする派閥です。"
 +++
@@ -49,7 +49,7 @@ MIT Licenseに含まれるならライセンスの指示に従えばいいので
 	
 {{< img src="images/VSCode-TM/What-2.png" caption="は？？？？？？？？？？？？" >}}
 	
-パブリックドメインに属す？？？？？？もう意味不明です。天下のWikipediaが言っている事だから情報は正しい...のか？
+パブリックドメインに属す？？？？？？
 	
 >	Q1-3.
 >	パブリックドメインについて詳しく教えて下さい。 

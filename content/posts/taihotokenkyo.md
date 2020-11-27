@@ -1,5 +1,6 @@
 +++
 date = "2019-03-19T17:00:00+09:00"
+lastmod = "2020-11-27T12:40:49+09:00"
 title = "[必見](日本で)逮捕、検挙される方法！"
 thumbnail = "images/lets-get-arrested-thumbnail.png"
 toc = true 
@@ -7,8 +8,6 @@ tags = ["PC", "JavaScript", "どうでも良いお話"]
 description = "lets-get-arrested(みんなで逮捕されようプロジェクト)に参加して犯罪者になる方法！"
 +++
 ## 最初に。
-※半分冗談半分本当かもしれない
-
 まぁココにたどり着いた人はだいたい知っているだろうけど一応説明。
 
 
@@ -32,9 +31,6 @@ while (1) {//無限ループ
 
 **あ　ほ　く　さ**
 
-まじで日本のサイバー課はどうしようもありませんね。何やってんだか。
-
-(coinhive事件もね！)
 <blockquote class="twitter-tweet" data-lang="ja"><p lang="ja" dir="ltr">パソコン初心者だけど玄人ぶる奴 <a href="http://t.co/PFqsth2ZGr">pic.twitter.com/PFqsth2ZGr</a></p>&mdash; やしろあずき (@yashi09) <a href="https://twitter.com/yashi09/status/595141090329567232?ref_src=twsrc%5Etfw">2015年5月4日</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
