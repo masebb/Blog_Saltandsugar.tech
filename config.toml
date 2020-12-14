@@ -8,8 +8,8 @@ googleAnalytics = "UA-132387896-1"
 disqusShortname = "saltandsugar"
 
 [params]
-  description = "所詮は中学生が書いたブログ "
-  dateformat = "Jan 2, 2006" # Optional
+  description = "なんか最近ブログ楽しくなってきた"
+  dateformat = "2006年1月2日" # Optional
   googlefonts = "https://fonts.googleapis.com/css?family=Lobster|Lato:400,700"
   logofontfamily = "Lobster, cursive"
 
